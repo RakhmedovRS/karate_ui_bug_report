@@ -1,13 +1,11 @@
 Feature: ui test
 
 Scenario Outline: <type>
-  * def webUrlBase = karate.properties['web.url.base']
-  * configure driver = { type: '#(type)', showDriverLog: true, executable: "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe" }
+  * def webUrlBase = 'https://yandex.ru'
+  * configure driver = { type: '#(type)', showDriverLog: true }
 
-  * driver webUrlBase + '/page-01'
-  * match text('#placeholder') == 'Before'
-  * click('{}Click Me')
-  * match text('#placeholder') == 'After'
+  * driver webUrlBase
+  * driver.quit()
 
 Examples:
 | type         |
