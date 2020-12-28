@@ -2,7 +2,7 @@ Feature: ui test
 
 Scenario Outline: <type>
   * def webUrlBase = karate.properties['web.url.base']
-  * configure driver = { type: '#(type)', showDriverLog: true, port: 12345, executable: "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe" }
+  * configure driver = { type: '#(type)', showDriverLog: true, executable: "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe" }
 
   * driver webUrlBase + '/page-01'
   * match text('#placeholder') == 'Before'
